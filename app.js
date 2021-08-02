@@ -1,41 +1,47 @@
-var btnCheck = document.querySelector("#btn-translated");
-var inputFirst = document.querySelector("#input1");
-var inputSecond = document.querySelector("#input2");
-var outputDiv = document.querySelector("#output");
+var btnCheck = document.querySelector("#btn-check");
+var billAmount = document.querySelector("#billamount");
+var cashPaid = document.querySelector("#cashpaid");
+var noteTobeGiven = document.querySelector("#notes");
+
 var log = console.log;
 
-const error = "give aproprate value in paid amount";
+var currency = [2000, 500, 100, 50, 20, 10, 1];
 
 
 
-function clickhandler() {
+function clickHandler(){
 
+    if(billAmount.value >=  0){
 
-    var first = inputFirst.value;
-    var second = inputSecond.value;
+        if(cashPaid.value >= billAmount.value){
 
+            var amountToBeReturn = cashPaid.value - billAmount.value;
+           // calculate(amountToBeReturn); 
+            for( var i = 0; i<currency.length; i++ ){
 
-    if (second > first) {
+                var numberOfNote = Math.trunc(amountToBeReturn / currency[i]);
+                var amountToBeReturn = amountToBeReturn % currency[i];
 
-        var sub = second - first;
-        
-        
+                  var noteNumber = numberOfNote;
 
-       
-       
-        
-    } 
-    else {
-              
+                  noteTobeGiven[i].innerText = noteNumber;
+                
+
+            }
+            
+        }
+       // else{
+
+       // }
         
     }
+    //else{
 
-
-    
-
-
-
-
+    //}
+       
+ 
 };
 
-btnCheck.addEventListener("click", clickhandler)
+
+
+btnCheck.addEventListener("click", clickHandler)
