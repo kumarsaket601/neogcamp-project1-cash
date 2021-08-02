@@ -19,14 +19,14 @@ function clickhandler() {
 
         var sub = second - first;
         
-        var divide = sub / 100;
+        
 
-        outputDiv.innerText  = divide;
+       
        
         
     } 
     else {
-
+              
         
     }
 
