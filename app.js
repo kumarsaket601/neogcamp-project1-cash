@@ -2,6 +2,7 @@ var btnCheck = document.querySelector("#btn-check");
 var billAmount = document.querySelector("#billamount");
 var cashPaid = document.querySelector("#cashpaid");
 const noteToBeGiven = document.querySelectorAll(".notes");
+var message = document.querySelector(".message");
 
 
 
@@ -40,7 +41,7 @@ function clickHandler() {
 
         }
          else{
-                
+                errorMessage();
             }
 
     }
