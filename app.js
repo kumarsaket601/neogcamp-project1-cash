@@ -8,6 +8,12 @@ var message = document.querySelector(".message");
 
 const currency = [2000, 500, 100, 50, 20, 10, 1];
 
+function erroMessage(msg){
+
+
+
+}
+
 function calculate(amountToBeReturn) {
 
 
