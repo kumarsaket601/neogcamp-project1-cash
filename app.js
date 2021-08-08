@@ -2,15 +2,16 @@ var btnCheck = document.querySelector("#btn-check");
 var billAmount = document.querySelector("#billamount");
 var cashPaid = document.querySelector("#cashpaid");
 const noteToBeGiven = document.querySelectorAll(".notes");
-var message = document.querySelector(".message");
+var message = document.querySelector("#message");
 
 
 
 const currency = [2000, 500, 100, 50, 20, 10, 1];
 
-function erroMessage(msg){
+function errorMessage(msg){
 
-
+    message.style.display = "block";
+    message.innerText = msg;
 
 }
 
@@ -39,23 +40,23 @@ function clickHandler() {
 
     if (billAmount.value > 0) {
 
-        if (cashPaid.value >= billAmount.value) {
+        if (Number(cashPaid.value) >= Number(billAmount.value)) {
 
-            var amountToBeReturn = cashPaid.value - billAmount.value;
-                         calculate(amountToBeReturn);
+            var amountToBeReturn = Number(cashPaid.value) - Number(billAmount.value);
+                calculate(amountToBeReturn);
 
 
         }
          else{
-                errorMessage();
+                errorMessage("Please provid the equal amount");
             }
 
     }
      else{
-            erroMessage();
+            errorMessage("Invalid input");
       }
 
 
-};
+}
 
 btnCheck.addEventListener('click', clickHandler)

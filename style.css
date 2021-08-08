@@ -23,6 +23,7 @@ h1,p{
 .container{
      max-width: 300px;
      margin: auto;
+   
 }
 
 input,label{
@@ -59,5 +60,8 @@ th,td{
     color: var(--primary-color);
     text-align: center;
 }
-
+.output{
+ 
+    align-content: center;
+}
 
