@@ -29,23 +29,28 @@ h1,p{
 input,label{
       display: block;
       font-weight: bold;
+      text-align: center;
+      padding: 0.5rem;
      
 }
 input{
-    margin-bottom: 1rem;
+    
+    border-color: white;
+    border-radius: 0.5rem;
     max-width: 600px;
     padding: 0.5rem;
-    width: 100%;
+    margin: auto;
 }
 
 #btn-check{
-    margin-top: 1rem;
+    display: block;
     margin: auto;
     background-color: transparent;
     color: var(--secondary-color);
-    padding: 0.5rem;
-    border-width: medium;
+    padding: 0.5rem 0.5rem;
+    
     border-radius: 0.4rem;
+    border-color: white;
 }
 
 
@@ -53,8 +58,11 @@ input{
     padding: 1rem 2rem;
     background-color: white;
 }
+
 th,td{
-    margin: auto;
+
+    
+   
     padding: 0.5rem 1rem;
     background-color: var(--secondary-color);
     color: var(--primary-color);
@@ -62,7 +70,10 @@ th,td{
 }
 .output{
  
-    align-content: center;
+
+    
+    margin: auto;
+    
 }
 /** footer**/
 .list-non-bullet {
@@ -77,9 +88,10 @@ th,td{
 
 .footer {
     background-color: var(--secondary-color);
-    padding: 7rem 1rem;
+    padding: 4rem 1rem;
     text-align: center;
     color: white;
+    margin-top: 2rem;
 
 }
 
@@ -88,7 +100,7 @@ th,td{
 }
 
 .footer ul {
-    padding-inline-start: opx;
+    padding-inline-start: 1px;
 }
 
 .footer .footer-header {
