@@ -8,7 +8,7 @@ var message = document.querySelector("#message");
 
 const currency = [2000, 500, 100, 50, 20, 10, 1];
 
-function errorMessage(msg){
+function errorMessage(msg) {
 
     message.style.display = "block";
     message.innerText = msg;
@@ -21,15 +21,15 @@ function calculate(amountToBeReturn) {
 
     for (var i = 0; i < currency.length; i++) {
 
-        var  numberOfNote = Math.trunc(amountToBeReturn / currency[i]);
-        var amountToBeReturn  =  amountToBeReturn % currency[i];
+        var numberOfNote = Math.trunc(amountToBeReturn / currency[i]);
+        var amountToBeReturn = amountToBeReturn % currency[i];
 
 
-       
-         noteToBeGiven[i].innerText = numberOfNote;
 
-        
-       
+        noteToBeGiven[i].innerText = numberOfNote;
+
+
+
 
 
     }
@@ -37,24 +37,27 @@ function calculate(amountToBeReturn) {
 
 
 function clickHandler() {
+    if (Number(cashPaid.value) >= 0 && Number(billAmount.value) >= 0) {
+        if (billAmount.value > 0) {
 
-    if (billAmount.value > 0) {
+            if (Number(cashPaid.value) >= Number(billAmount.value)) {
 
-        if (Number(cashPaid.value) >= Number(billAmount.value)) {
-
-            var amountToBeReturn = Number(cashPaid.value) - Number(billAmount.value);
+                var amountToBeReturn = Number(cashPaid.value) - Number(billAmount.value);
                 calculate(amountToBeReturn);
 
 
-        }
-         else{
+            } else {
                 errorMessage("Please provid the equal amount");
             }
 
-    }
-     else{
+        } else {
             errorMessage("Invalid input");
-      }
+        }
+    } else {
+                 message.innerText = "Please provide the positive value";
+    }
+
+
 
 
 }
