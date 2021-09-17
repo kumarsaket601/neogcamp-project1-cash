@@ -37,8 +37,11 @@ function calculate(amountToBeReturn) {
 
 
 function clickHandler() {
-    if (Number(cashPaid.value) >= 0 && Number(billAmount.value) >= 0) {
-        if (billAmount.value > 0) {
+
+    if (Number(cashPaid.value) != '' && Number(billAmount.value) != '') {
+
+
+        if (Number(billAmount.value) > 0 && Number(cashPaid.value) > 0 ) {
 
             if (Number(cashPaid.value) >= Number(billAmount.value)) {
 
@@ -47,15 +50,18 @@ function clickHandler() {
 
 
             } else {
-                errorMessage("Please provid the equal amount");
+                errorMessage("Please provid the equal amount or greater than bill amount");
             }
 
         } else {
-            errorMessage("Invalid input");
+            errorMessage("Please provide  with positive value");
         }
-    } else {
-                 message.innerText = "Please provide the positive value";
     }
+
+
+ else {
+    errorMessage("Provide some value in the input");
+}
 
 
 
