@@ -8,6 +8,10 @@ var message = document.querySelector("#message");
 
 const currency = [2000, 500, 100, 50, 20, 10, 1];
 
+function hideMessage(){
+    message.style.display = "none";
+}
+
 function errorMessage(msg) {
 
     message.style.display = "block";
@@ -44,12 +48,13 @@ function clickHandler() {
         if (Number(billAmount.value) > 0 && Number(cashPaid.value) > 0 ) {
 
             if (Number(cashPaid.value) >= Number(billAmount.value)) {
-
+                hideMessage();
                 var amountToBeReturn = Number(cashPaid.value) - Number(billAmount.value);
                 calculate(amountToBeReturn);
 
 
             } else {
+               
                 errorMessage("Please provid the equal amount or greater than bill amount");
             }
 
