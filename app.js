@@ -48,12 +48,16 @@ function clickHandler() {
         if (Number(billAmount.value) > 0 && Number(cashPaid.value) > 0 ) {
 
             if (Number(cashPaid.value) >= Number(billAmount.value)) {
+                
                 hideMessage();
+
                 var amountToBeReturn = Number(cashPaid.value) - Number(billAmount.value);
+
                 calculate(amountToBeReturn);
 
 
-            } else {
+            } 
+            else {
                
                 errorMessage("Please provid the equal amount or greater than bill amount");
             }
